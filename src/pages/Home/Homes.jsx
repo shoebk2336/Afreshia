@@ -5,6 +5,7 @@ import { LeadGrid } from "../../components/Grid/Grid"
 import { Banner } from "../../components/Banner/Banner"
 import { Footer } from "../../components/Footer/Footer"
 import { FeatureSection } from "../../components/FeatureSection/FeatureSection"
+import { Container } from "@mantine/core"
 
 
 
@@ -20,11 +21,12 @@ export const Home=()=>{
     }
     useEffect(()=>{Fetch()},[])
     return(<>
+        <Container size='lg'>
         <Navbar/>
         <CustomCarousel Data={Fetcheddata}/>
         <Banner/>
         <LeadGrid/>
         <FeatureSection/>
-        <Footer/>
+        </Container>
         </>)
 }

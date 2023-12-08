@@ -4,10 +4,7 @@ import { Home } from './pages/Home/Homes';
 
 function App() {
   return (
-    <Container size='md'
-    >
-      <Home/>
-    </Container>
+    <Home/>
     
   );
 }

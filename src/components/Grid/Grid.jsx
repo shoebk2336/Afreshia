@@ -6,7 +6,7 @@ export function LeadGrid() {
 const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - var(--mantine-spacing-md) / 2)`;
 
 return (
-    <Container my="md">
+    // <Container size="lg">
     <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
         <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
         <Grid gutter="md">
@@ -21,6 +21,6 @@ return (
         </Grid.Col>
         </Grid>
     </SimpleGrid>
-    </Container>
+    // </Container>
 );
 }

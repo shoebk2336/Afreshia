@@ -1,10 +1,14 @@
-import { Container } from '@mantine/core';
 import './App.css';
-import { Home } from './pages/Home/Homes';
+import { Routers } from './components/Routers/Routers';
+import '@mantine/core/styles.css'
+
 
 function App() {
   return (
-    <Home/>
+    <>
+    
+    <Routers/>
+    </>
     
   );
 }

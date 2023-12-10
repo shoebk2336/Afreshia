@@ -3,7 +3,6 @@ import {  CustomCarousel } from "../../components/Carousel/Carousel"
 import { Navbar } from "../../components/Navbar/Navbar"
 import { LeadGrid } from "../../components/Grid/Grid"
 import { Banner } from "../../components/Banner/Banner"
-import { Footer } from "../../components/Footer/Footer"
 import { FeatureSection } from "../../components/FeatureSection/FeatureSection"
 import { Container } from "@mantine/core"
 

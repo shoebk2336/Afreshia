@@ -96,55 +96,13 @@ export function Navbar() {
             <a href="home" className={classes.link}>
                 Home
             </a>
-            <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
-                <HoverCard.Target>
-                <a href="home" className={classes.link}>
-                    <Center inline>
-                    <Box component="span" mr={5}>
-                        Features
-                    </Box>
-                    <IconChevronDown
-                        style={{ width: rem(16), height: rem(16) }}
-                        color={theme.colors.blue[6]}
-                    />
-                    </Center>
-                </a>
-                </HoverCard.Target>
+            
 
-                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
-                <Group justify="space-between" px="md">
-                    <Text fw={500}>Features</Text>
-                    <Anchor hhomeef="#" fz="xs">
-                    View all
-                    </Anchor>
-                </Group>
-
-                <Divider my="sm" />
-
-                <SimpleGrid cols={2} spacing={0}>
-                    {links}
-                </SimpleGrid>
-
-                <div className={classes.dropdownFooter}>
-                    <Group justify="space-between">
-                    <div>
-                        <Text fw={500} fz="sm">
-                        Get started
-                        </Text>
-                        <Text size="xs" c="dimmed">
-                        Their food sources have decreased, and their numbers
-                        </Text>
-                    </div>
-                    <Button variant="default">Get started</Button>
-                    </Group>
-                </div>
-                </HoverCard.Dropdown>
-            </HoverCard>
-            <a href="home" className={classes.link}>
-                Learn
+            <a href="/mens" className={classes.link}>
+                Mens
             </a>
-            <a href="home" className={classes.link}>
-                Academy
+            <a href="/womens" className={classes.link}>
+                Women
             </a>
             </Group>
 
@@ -202,3 +160,48 @@ export function Navbar() {
     </Box>
     );
 }
+
+// <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+//                 <HoverCard.Target>
+//                 <a href="home" className={classes.link}>
+//                     <Center inline>
+//                     <Box component="span" mr={5}>
+//                         Mens
+//                     </Box>
+//                     <IconChevronDown
+//                         style={{ width: rem(16), height: rem(16) }}
+//                         color={theme.colors.blue[6]}
+//                     />
+//                     </Center>
+//                 </a>
+//                 </HoverCard.Target>
+
+//                 <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
+//                 <Group justify="space-between" px="md">
+//                     <Text fw={500}>Features</Text>
+//                     <Anchor hhomeef="#" fz="xs">
+//                     View all
+//                     </Anchor>
+//                 </Group>
+
+//                 <Divider my="sm" />
+
+//                 <SimpleGrid cols={2} spacing={0}>
+//                     {links}
+//                 </SimpleGrid>
+
+//                 <div className={classes.dropdownFooter}>
+//                     <Group justify="space-between">
+//                     <div>
+//                         <Text fw={500} fz="sm">
+//                         Get started
+//                         </Text>
+//                         <Text size="xs" c="dimmed">
+//                         Their food sources have decreased, and their numbers
+//                         </Text>
+//                     </div>
+//                     <Button variant="default">Get started</Button>
+//                     </Group>
+//                 </div>
+//                 </HoverCard.Dropdown>
+//             </HoverCard>

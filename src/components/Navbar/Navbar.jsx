@@ -16,9 +16,13 @@ import {
     ScrollArea,
     rem,
     useMantineTheme,
+    ActionIcon,
+    Indicator,
+    Badge,
 } from '@mantine/core';
 import { MantineLogo } from '@mantine/ds';
 import { useDisclosure } from '@mantine/hooks';
+import { useSelector } from 'react-redux';
 import {
     IconNotification,
     IconCode,
@@ -27,6 +31,7 @@ import {
     IconFingerprint,
     IconCoin,
     IconChevronDown,
+    IconShoppingCart,
 } from '@tabler/icons-react';
 import classes from './Navbar.module.css';
 
@@ -64,6 +69,7 @@ const mockdata = [
 ];
 
 export function Navbar() {
+    const CartReducer=useSelector(state=>state)
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
     const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
     const theme = useMantineTheme();
@@ -93,7 +99,7 @@ export function Navbar() {
             <MantineLogo size={30} />
 
             <Group h="100%" gap={0} visibleFrom="sm">
-            <a href="home" className={classes.link}>
+            <a href="/" className={classes.link}>
                 Home
             </a>
             
@@ -108,7 +114,25 @@ export function Navbar() {
 
             <Group visibleFrom="sm">
             <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <ActionIcon
+            pos='relative'
+            ><IconShoppingCart />
+            <Indicator
+            
+            radius='xl'
+            color='black'
+            withBorder
+            pos='absolute'
+            bottom={-5}
+            left={-1}
+            label={CartReducer.CartReducer.length}
+            styles={{
+                root:{radius:"10px"},
+                indicator:{width:"8px",height:"8px",padding:"8px"}
+            }}
+            />
+            </ActionIcon>
+            
             </Group>
 
             <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
@@ -127,7 +151,7 @@ export function Navbar() {
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
             <Divider my="sm" />
 
-            <a href="home" className={classes.link}>
+            <a href="/" className={classes.link}>
             Home
             </a>
             <UnstyledButton className={classes.link} onClick={toggleLinks}>

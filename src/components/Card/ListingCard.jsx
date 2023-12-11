@@ -1,15 +1,17 @@
 import { Badge, Box, Card, Divider, Flex, Image, Rating, Space, Text, Title } from "@mantine/core"
 import { IconCurrencyRupee } from "@tabler/icons-react"
 import classes from './ListingCard.module.css'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 export const ListingCard=(props)=>{
-    const {setLoading}=props
+    const {setLoading,to,data}=props
     const navigate=useNavigate()
+    // const {id}=useParams()
+    const id=1
     const Navigation=()=>{
         setLoading(true)
         setTimeout(()=>{
-            navigate('/Ind')
+            navigate('/'+to+'/'+id)
             setLoading(false)
         },[1000])
     }
@@ -21,7 +23,10 @@ export const ListingCard=(props)=>{
         shadow="lg"
         onClick={Navigation}
         >
-        <Image src='https://drive.google.com/uc?export=view&id=1CnFjJU78uNbg6XaNK_c4i-NU219aEFN9'/>
+        <Image
+        // fit=""
+        // style={{height:"300px"}}
+        src={data?.imageLink}/>
         <Space h='md'/>
         <Divider/>
         <Space h='md'/>
@@ -33,9 +38,9 @@ export const ListingCard=(props)=>{
         fontFamily:"cursive"    
         }}
         order={6}>AFRESHIA</Title>
-        <Title order={4}>Product Name</Title>
-        <Text c='gray'>Description about the product</Text>
-        <Rating value={3.5} fractions={2} readOnly />
+        <Title order={4}>{data?.productName}</Title>
+        <Text c='gray'>{data?.description}</Text>
+        <Rating value={data?.rating} fractions={2} readOnly />
         <Flex
         align='center'
         >
@@ -45,17 +50,12 @@ export const ListingCard=(props)=>{
         style={{
             textDecoration:"line-through"
         }}
-        >1400</Text>
+        >{data?.actualPrice}</Text>
         <IconCurrencyRupee size='20px' />
         <Title 
-        
         order={5}>
-        1250rs</Title>
+        {data?.discountedPrice}</Title>
         </Flex>
-        
-        
-
-        
         </Box>
         </Card>
         </>)

@@ -4,11 +4,20 @@ import { IconCoinRupee, IconCurrencyRupee } from "@tabler/icons-react"
 import { useState } from "react"
 import { CustomCarousel } from "../../components/Carousel/Carousel"
 import { Navbar } from "../../components/Navbar/Navbar"
+import {useDispatch,useSelector} from 'react-redux'
+import { useParam } from "react-router"
+import { useNavigate } from "react-router"
 
 
 
 
 export const IndividualProduct=()=>{
+    const navigate=useNavigate()
+    const dispatch=useDispatch()
+    const CartReducer=useSelector(state=>state)
+    console.log(CartReducer,'cartReducer')
+    // const {id}=useParams()
+    const id=1
     const [Qty,setQty]=useState(1)
     return<>
     <Navbar/>
@@ -70,11 +79,12 @@ export const IndividualProduct=()=>{
         />
         <Button
         fullWidth
-        
+        onClick={()=>dispatch({type:"product",payload:{Qty,id}})}
         variant="default"
         >Add to cart</Button>
         <Button
         fullWidth
+        onClick={()=>navigate('/cart')}
         >Buy Now</Button>
         </SimpleGrid>
         </Box>

@@ -5,20 +5,18 @@ import { LeadGrid } from "../../components/Grid/Grid"
 import { Banner } from "../../components/Banner/Banner"
 import { FeatureSection } from "../../components/FeatureSection/FeatureSection"
 import { Container } from "@mantine/core"
+import { RestApi } from "../../components/RestApi/RestApi"
 
 
 
 export const Home=()=>{
     const [Fetcheddata,setData]=useState()
     console.log(Fetcheddata)
-    const Fetch=async()=>{
-        try{const Data=await fetch(` http://localhost:3001/carousel1`)
-        const res=await Data.json()
-    setData(res)
-    }
-    catch(err){console.log(err)}
-    }
-    useEffect(()=>{Fetch()},[])
+    useEffect(()=>{
+        RestApi({subUrl:'carousel1'})
+        .then((result)=> setData(result))
+    },[])
+
     return(<>
         <Container size='lg'>
         <Navbar/>

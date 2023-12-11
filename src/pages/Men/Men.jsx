@@ -20,7 +20,7 @@ export const MensProduct=()=>{
         <SimpleGrid cols={{base:1,sm:3}}>
         <PageLoading visible={Loading}/>
         {arr.map((card,index)=>
-            <ListingCard key={index} setLoading={setLoading}/>
+            <ListingCard key={index} setLoading={setLoading} to='mens'/>
             )}
         </SimpleGrid>
         </Container>

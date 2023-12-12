@@ -5,13 +5,14 @@ export function Banner() {
 return (
     <div className={classes.wrapper}>
     <div className={classes.body}>
-        <Title className={classes.title}>Wait a minute...</Title>
+        <Title className={classes.title}>Discover the Latest Fashion Trends...</Title>
         <Text fw={500} fz="lg" mb={5}>
-        Subscribe to our newsletter!
+        Elevate Your Style with Our New Collection!
         </Text>
         <Text fz="sm" c="dimmed">
-        You will never miss important product updates, latest news and community QA sessions. Our
-        newsletter is once a week, every Sunday.
+        Explore a curated selection of fashion-forward 
+        clothing and accessories designed to make you stand out. 
+        Stay on top of the latest trends and express your unique style.
         </Text>
 
         

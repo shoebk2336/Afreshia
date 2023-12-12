@@ -16,9 +16,13 @@ import {
     ScrollArea,
     rem,
     useMantineTheme,
+    ActionIcon,
+    Indicator,
+    Badge,
+    Image,
 } from '@mantine/core';
-import { MantineLogo } from '@mantine/ds';
 import { useDisclosure } from '@mantine/hooks';
+import { useSelector } from 'react-redux';
 import {
     IconNotification,
     IconCode,
@@ -27,6 +31,7 @@ import {
     IconFingerprint,
     IconCoin,
     IconChevronDown,
+    IconShoppingCart,
 } from '@tabler/icons-react';
 import classes from './Navbar.module.css';
 
@@ -64,6 +69,7 @@ const mockdata = [
 ];
 
 export function Navbar() {
+    const CartReducer=useSelector(state=>state)
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
     const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
     const theme = useMantineTheme();
@@ -90,67 +96,48 @@ export function Navbar() {
     <Box pb={120}>
         <header className={classes.header}>
         <Group justify="space-between" h="100%">
-            <MantineLogo size={30} />
+            <Image 
+            className={classes.logo}
+            href="/"
+            fit='contain'
+            w={120}
+            src={"https://drive.google.com/uc?export=view&id=183zG6pjfRGDyAjtKC9wvb--7XQysyZE-"}/>
 
             <Group h="100%" gap={0} visibleFrom="sm">
-            <a href="home" className={classes.link}>
+            <a href="/" className={classes.link}>
                 Home
             </a>
-            <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
-                <HoverCard.Target>
-                <a href="home" className={classes.link}>
-                    <Center inline>
-                    <Box component="span" mr={5}>
-                        Features
-                    </Box>
-                    <IconChevronDown
-                        style={{ width: rem(16), height: rem(16) }}
-                        color={theme.colors.blue[6]}
-                    />
-                    </Center>
-                </a>
-                </HoverCard.Target>
+            
 
-                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
-                <Group justify="space-between" px="md">
-                    <Text fw={500}>Features</Text>
-                    <Anchor hhomeef="#" fz="xs">
-                    View all
-                    </Anchor>
-                </Group>
-
-                <Divider my="sm" />
-
-                <SimpleGrid cols={2} spacing={0}>
-                    {links}
-                </SimpleGrid>
-
-                <div className={classes.dropdownFooter}>
-                    <Group justify="space-between">
-                    <div>
-                        <Text fw={500} fz="sm">
-                        Get started
-                        </Text>
-                        <Text size="xs" c="dimmed">
-                        Their food sources have decreased, and their numbers
-                        </Text>
-                    </div>
-                    <Button variant="default">Get started</Button>
-                    </Group>
-                </div>
-                </HoverCard.Dropdown>
-            </HoverCard>
-            <a href="home" className={classes.link}>
-                Learn
+            <a href="/mens" className={classes.link}>
+                Mens
             </a>
-            <a href="home" className={classes.link}>
-                Academy
+            <a href="/womens" className={classes.link}>
+                Women
             </a>
             </Group>
 
             <Group visibleFrom="sm">
             <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <ActionIcon
+            pos='relative'
+            ><IconShoppingCart />
+            <Indicator
+            
+            radius='xl'
+            color='black'
+            withBorder
+            pos='absolute'
+            bottom={-5}
+            left={-1}
+            label={CartReducer.CartReducer.length}
+            styles={{
+                root:{radius:"10px"},
+                indicator:{width:"8px",height:"8px",padding:"8px"}
+            }}
+            />
+            </ActionIcon>
+            
             </Group>
 
             <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
@@ -169,7 +156,7 @@ export function Navbar() {
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
             <Divider my="sm" />
 
-            <a href="home" className={classes.link}>
+            <a href="/" className={classes.link}>
             Home
             </a>
             <UnstyledButton className={classes.link} onClick={toggleLinks}>
@@ -202,3 +189,48 @@ export function Navbar() {
     </Box>
     );
 }
+
+// <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+//                 <HoverCard.Target>
+//                 <a href="home" className={classes.link}>
+//                     <Center inline>
+//                     <Box component="span" mr={5}>
+//                         Mens
+//                     </Box>
+//                     <IconChevronDown
+//                         style={{ width: rem(16), height: rem(16) }}
+//                         color={theme.colors.blue[6]}
+//                     />
+//                     </Center>
+//                 </a>
+//                 </HoverCard.Target>
+
+//                 <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
+//                 <Group justify="space-between" px="md">
+//                     <Text fw={500}>Features</Text>
+//                     <Anchor hhomeef="#" fz="xs">
+//                     View all
+//                     </Anchor>
+//                 </Group>
+
+//                 <Divider my="sm" />
+
+//                 <SimpleGrid cols={2} spacing={0}>
+//                     {links}
+//                 </SimpleGrid>
+
+//                 <div className={classes.dropdownFooter}>
+//                     <Group justify="space-between">
+//                     <div>
+//                         <Text fw={500} fz="sm">
+//                         Get started
+//                         </Text>
+//                         <Text size="xs" c="dimmed">
+//                         Their food sources have decreased, and their numbers
+//                         </Text>
+//                     </div>
+//                     <Button variant="default">Get started</Button>
+//                     </Group>
+//                 </div>
+//                 </HoverCard.Dropdown>
+//             </HoverCard>

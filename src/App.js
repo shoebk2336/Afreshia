@@ -1,13 +1,17 @@
-import { Container } from '@mantine/core';
+import '@mantine/core/styles.css'
 import './App.css';
-import { Home } from './pages/Home/Homes';
+import { store } from './components/Redux/Store';
+import { Routers } from './components/Routers/Routers';
+import { Provider } from 'react-redux';
+
 
 function App() {
   return (
-    <Container size='md'
-    >
-      <Home/>
-    </Container>
+    <>
+    <Provider store={store}>
+    <Routers/>
+    </Provider>
+    </>
     
   );
 }

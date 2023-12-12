@@ -1,12 +1,13 @@
 import { Badge, Box, Button, Chip, Container, Divider, Flex, Grid,
     Image, NumberInput, Rating, SimpleGrid, Space, Text, TextInput, Title } from "@mantine/core"
 import { IconCoinRupee, IconCurrencyRupee } from "@tabler/icons-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { CustomCarousel } from "../../components/Carousel/Carousel"
 import { Navbar } from "../../components/Navbar/Navbar"
 import {useDispatch,useSelector} from 'react-redux'
-import { useParam } from "react-router"
+import { useParam, useParams } from "react-router"
 import { useNavigate } from "react-router"
+import { RestApi } from "../../components/RestApi/RestApi"
 
 
 
@@ -16,9 +17,14 @@ export const IndividualProduct=()=>{
     const dispatch=useDispatch()
     const CartReducer=useSelector(state=>state)
     console.log(CartReducer,'cartReducer')
-    // const {id}=useParams()
-    const id=1
+    const {cat,id}=useParams()
+    console.log(cat,id,'cat')
+    // const id=1
     const [Qty,setQty]=useState(1)
+
+    // useEffect(()=>{
+    //     RestApi({subUrl:""})
+    // },[])
     return<>
     <Navbar/>
     <Container size='lg'>

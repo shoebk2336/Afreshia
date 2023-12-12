@@ -20,3 +20,6 @@
     margin-top: var(--mantine-spacing-md);
     }
 }
+.logo{
+    &:hover{cursor: pointer;}
+}

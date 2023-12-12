@@ -6,26 +6,27 @@ import { useNavigate, useParams } from "react-router-dom"
 export const ListingCard=(props)=>{
     const {setLoading,to,data}=props
     const navigate=useNavigate()
-    // const {id}=useParams()
-    const id=1
+    
+    
     const Navigation=()=>{
         setLoading(true)
         setTimeout(()=>{
-            navigate('/'+to+'/'+id)
+            navigate('/'+to+'/'+data?.id)
             setLoading(false)
         },[1000])
     }
 
     return(<>
         <Card
+        h='650px'
         className={classes.card}
         style={{border:"0px solid gray"}}
         shadow="lg"
         onClick={Navigation}
         >
         <Image
-        // fit=""
-        // style={{height:"300px"}}
+        fit="contain"
+        h={400}
         src={data?.imageLink}/>
         <Space h='md'/>
         <Divider/>
@@ -44,7 +45,6 @@ export const ListingCard=(props)=>{
         <Flex
         align='center'
         >
-        
         <Text
         c='gray'
         style={{

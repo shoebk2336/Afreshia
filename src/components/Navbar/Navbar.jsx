@@ -19,8 +19,8 @@ import {
     ActionIcon,
     Indicator,
     Badge,
+    Image,
 } from '@mantine/core';
-import { MantineLogo } from '@mantine/ds';
 import { useDisclosure } from '@mantine/hooks';
 import { useSelector } from 'react-redux';
 import {
@@ -96,7 +96,12 @@ export function Navbar() {
     <Box pb={120}>
         <header className={classes.header}>
         <Group justify="space-between" h="100%">
-            <MantineLogo size={30} />
+            <Image 
+            className={classes.logo}
+            href="/"
+            fit='contain'
+            w={120}
+            src={"https://drive.google.com/uc?export=view&id=183zG6pjfRGDyAjtKC9wvb--7XQysyZE-"}/>
 
             <Group h="100%" gap={0} visibleFrom="sm">
             <a href="/" className={classes.link}>

@@ -139,7 +139,179 @@
       "imageLink": "https://drive.google.com/uc?export=view&id=1GY8xRbk1jPam6MbKg7d59nlmBUcmUQd5"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "mens": [
+    {
+      "id": 19,
+      "productName": "Classic Formal Blazer",
+      "description": "A classic formal blazer for a sharp and sophisticated look.",
+      "rating": 4.6,
+      "actualPrice": 6999.0,
+      "discountedPrice": 5499.0,
+      "discountPercentage": 21,
+      "imageLink": "https://drive.google.com/uc?export=view&id=1gXnt8v8YuZmdsdII9gnLu5Q4cw3CiJ_w"
+    },
+    {
+      "id": 20,
+      "productName": "Slim Fit Business Shirt",
+      "description": "A slim fit business shirt that combines style and comfort.",
+      "rating": 4.8,
+      "actualPrice": 2999.0,
+      "discountedPrice": 2499.0,
+      "discountPercentage": 17,
+      "imageLink": "https://drive.google.com/uc?export=view&id=10oYBBUmdEEelJV96-X6gBN7akeHta3oV"
+    },
+    {
+      "id": 21,
+      "productName": "Casual Denim Jeans",
+      "description": "Casual denim jeans for a laid-back yet stylish look.",
+      "rating": 4.4,
+      "actualPrice": 2499.0,
+      "discountedPrice": 1999.0,
+      "discountPercentage": 20,
+      "imageLink": "https://drive.google.com/uc?export=view&id=1qWx5pJ5mR-uxQ-tYh0S7bnhzxXDYk0Fv"
+    },
+    {
+      "id": 22,
+      "productName": "Athletic Performance Shorts",
+      "description": "Athletic performance shorts designed for comfort and flexibility.",
+      "rating": 4.7,
+      "actualPrice": 1599.0,
+      "discountedPrice": 1299.0,
+      "discountPercentage": 19,
+      "imageLink": "https://drive.google.com/uc?export=view&id=1U0JP7fUo08M8o6Be8eZhPv60mzl1VqVR"
+    },
+    {
+      "id": 23,
+      "productName": "Striped Polo T-Shirt",
+      "description": "A striped polo t-shirt for a casual and sporty look.",
+      "rating": 4.5,
+      "actualPrice": 1799.0,
+      "discountedPrice": 1499.0,
+      "discountPercentage": 17,
+      "imageLink": "https://drive.google.com/uc?export=view&id=1IAXieHggtZKXoHr2qrVH2208NHYYRPtC"
+    },
+    {
+      "id": 24,
+      "productName": "Classic Leather Dress Shoes",
+      "description": "Classic leather dress shoes for a polished and timeless appearance.",
+      "rating": 4.9,
+      "actualPrice": 3999.0,
+      "discountedPrice": 3299.0,
+      "discountPercentage": 18,
+      "imageLink": "https://drive.google.com/uc?export=view&id=1EOyoLQjdsQt9gS1r9k1Gd_0TxXRY6fX0"
+    },
+    {
+      "id": 25,
+      "productName": "Sporty Hooded Jacket",
+      "description": "A sporty hooded jacket for a cool and casual look.",
+      "rating": 4.3,
+      "actualPrice": 2999.0,
+      "discountedPrice": 2499.0,
+      "discountPercentage": 17,
+      "imageLink": "https://drive.google.com/uc?export=view&id=19M99uR5Z6DyltxM8hIf1jbddTJTXLxtL"
+    },
+    {
+      "id": 26,
+      "productName": "Cotton Casual Chinos",
+      "description": "Comfortable cotton casual chinos for a versatile and stylish wardrobe.",
+      "rating": 4.6,
+      "actualPrice": 2299.0,
+      "discountedPrice": 1899.0,
+      "discountPercentage": 17,
+      "imageLink": "https://drive.google.com/uc?export=view&id=1Ldwyu8UAgv8XP8_KHpAD1us7IMLBCrxV"
+    },
+    {
+      "id": 27,
+      "productName": "V-Neck Casual Sweater",
+      "description": "A V-neck casual sweater for a cozy and trendy winter look.",
+      "rating": 4.2,
+      "actualPrice": 1899.0,
+      "discountedPrice": 1499.0,
+      "discountPercentage": 21,
+      "imageLink": "https://drive.google.com/uc?export=view&id=1Ldwyu8UAgv8XP8_KHpAD1us7IMLBCrxV"
+    },
+      {
+        "id": 28,
+        "productName": "Classic Leather Belt",
+        "description": "A classic leather belt to complete your sophisticated look.",
+        "rating": 4.7,
+        "actualPrice": 999.0,
+        "discountedPrice": 799.0,
+        "discountPercentage": 20,
+        "imageLink": "https://drive.google.com/uc?export=view&id=1gXnt8v8YuZmdsdII9gnLu5Q4cw3CiJ_w"
+      },
+      {
+        "id": 29,
+        "productName": "Casual Striped Shirt",
+        "description": "A casual striped shirt for a relaxed and stylish vibe.",
+        "rating": 4.5,
+        "actualPrice": 2499.0,
+        "discountedPrice": 1999.0,
+        "discountPercentage": 20,
+        "imageLink": "https://drive.google.com/uc?export=view&id=10oYBBUmdEEelJV96-X6gBN7akeHta3oV"
+      },
+      {
+        "id": 30,
+        "productName": "Cargo Style Shorts",
+        "description": "Cargo style shorts for a rugged and adventurous look.",
+        "rating": 4.2,
+        "actualPrice": 1699.0,
+        "discountedPrice": 1399.0,
+        "discountPercentage": 18,
+        "imageLink": "https://drive.google.com/uc?export=view&id=1qWx5pJ5mR-uxQ-tYh0S7bnhzxXDYk0Fv"
+      },
+      {
+        "id": 31,
+        "productName": "Classic Crew Neck Sweater",
+        "description": "A classic crew neck sweater for a warm and timeless style.",
+        "rating": 4.8,
+        "actualPrice": 1899.0,
+        "discountedPrice": 1499.0,
+        "discountPercentage": 21,
+        "imageLink": "https://drive.google.com/uc?export=view&id=1U0JP7fUo08M8o6Be8eZhPv60mzl1VqVR"
+      },
+      {
+        "id": 32,
+        "productName": "Sporty Track Pants",
+        "description": "Sporty track pants for a comfortable and active lifestyle.",
+        "rating": 4.6,
+        "actualPrice": 1499.0,
+        "discountedPrice": 1199.0,
+        "discountPercentage": 20,
+        "imageLink": "https://drive.google.com/uc?export=view&id=1IAXieHggtZKXoHr2qrVH2208NHYYRPtC"
+      },
+      {
+        "id": 33,
+        "productName": "Sleek Leather Sneakers",
+        "description": "Sleek leather sneakers for a modern and urban look.",
+        "rating": 4.9,
+        "actualPrice": 2999.0,
+        "discountedPrice": 2499.0,
+        "discountPercentage": 17,
+        "imageLink": "https://drive.google.com/uc?export=view&id=1EOyoLQjdsQt9gS1r9k1Gd_0TxXRY6fX0"
+      },
+      {
+        "id": 34,
+        "productName": "Modern Checkered Shirt",
+        "description": "A modern checkered shirt for a trendy and fashionable appearance.",
+        "rating": 4.4,
+        "actualPrice": 2199.0,
+        "discountedPrice": 1799.0,
+        "discountPercentage": 18,
+        "imageLink": "https://drive.google.com/uc?export=view&id=19M99uR5Z6DyltxM8hIf1jbddTJTXLxtL"
+      },
+      {
+        "id": 35,
+        "productName": "Casual Cargo Jacket",
+        "description": "A casual cargo jacket for a versatile and rugged outdoor style.",
+        "rating": 4.3,
+        "actualPrice": 3499.0,
+        "discountedPrice": 2799.0,
+        "discountPercentage": 20,
+        "imageLink": "https://drive.google.com/uc?export=view&id=1Ldwyu8UAgv8XP8_KHpAD1us7IMLBCrxV"
+      }
+    
+    
+    
+  ]  
 }

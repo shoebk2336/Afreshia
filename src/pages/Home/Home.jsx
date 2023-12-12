@@ -6,6 +6,7 @@ import { Banner } from "../../components/Banner/Banner"
 import { FeatureSection } from "../../components/FeatureSection/FeatureSection"
 import { Container } from "@mantine/core"
 import { RestApi } from "../../components/RestApi/RestApi"
+import { FooterLinks } from "../../components/Footer/CustomFooter"
 
 
 
@@ -18,12 +19,14 @@ export const Home=()=>{
     },[])
 
     return(<>
-        <Container size='lg'>
         <Navbar/>
+        <Container size='lg'>
+        
         <CustomCarousel Data={Fetcheddata}/>
         <Banner/>
         <LeadGrid/>
         <FeatureSection/>
         </Container>
+        <FooterLinks/>
         </>)
 }

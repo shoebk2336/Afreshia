@@ -1,11 +1,12 @@
-
+import env from "react-dotenv"
 
 
 export const RestApi=async(props)=>{
-    const {subUrl}=props
+    const {subUrl,Param}=props
 
-
-    try{const Data=await fetch('http://localhost:3001/'+subUrl)
+const Url1=`https://afreshiapi.onrender.com/${subUrl}/${Param}`
+const Url2=`https://afreshiapi.onrender.com/${subUrl}`
+    try{const Data=await fetch(Param?Url1:Url2)
         const Response=Data.json()
     return Response}
     catch(err){return err}

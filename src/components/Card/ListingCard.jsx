@@ -11,7 +11,7 @@ export const ListingCard=(props)=>{
     const Navigation=()=>{
         setLoading(true)
         setTimeout(()=>{
-            navigate('/'+to+'/'+data?.id)
+            navigate(`/${to}/${data?.id}`)
             setLoading(false)
         },[1000])
     }

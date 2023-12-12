@@ -5,7 +5,8 @@ import { useEffect, useState } from "react"
 import { CustomCarousel } from "../../components/Carousel/Carousel"
 import { Navbar } from "../../components/Navbar/Navbar"
 import {useDispatch,useSelector} from 'react-redux'
-import { useParam, useParams } from "react-router"
+import {  useParams } from "react-router"
+import { useSearchParams } from "react-router-dom"
 import { useNavigate } from "react-router"
 import { RestApi } from "../../components/RestApi/RestApi"
 
@@ -15,16 +16,18 @@ import { RestApi } from "../../components/RestApi/RestApi"
 export const IndividualProduct=()=>{
     const navigate=useNavigate()
     const dispatch=useDispatch()
-    const CartReducer=useSelector(state=>state)
-    console.log(CartReducer,'cartReducer')
-    const {cat,id}=useParams()
-    console.log(cat,id,'cat')
+    const ProductReducer=useSelector(state=>state.ProductReducer)
+    const {individual}=ProductReducer
+    console.log(ProductReducer,'productreducer')
+    const {Cat,id}=useParams()
+    console.log(Cat,id,'cat')
     // const id=1
     const [Qty,setQty]=useState(1)
 
-    // useEffect(()=>{
-    //     RestApi({subUrl:""})
-    // },[])
+    useEffect(()=>{
+        RestApi({subUrl:Cat,Param:id})
+        .then((result)=>dispatch({type:"individual",payload:result}))
+    },[])
     return<>
     <Navbar/>
     <Container size='lg'>
@@ -39,7 +42,9 @@ export const IndividualProduct=()=>{
     >
     <Box className="Image">
     <Image 
-    src="https://drive.google.com/uc?export=view&id=1CnFjJU78uNbg6XaNK_c4i-NU219aEFN9"
+    fit="contain"
+    w={300}
+    src={individual?.imageLink}
     
     />
             
@@ -56,9 +61,9 @@ export const IndividualProduct=()=>{
         ff='cursive'
         >AFRESHIA</Title>
         <Space h='md'/>
-        <Title order={3}>Product Name</Title>
+        <Title order={3}>{individual?.productName}</Title>
         <Text c='gray'>Description about the product in twi three lines</Text>
-        <Rating value={3.5} fractions={2} readOnly />
+        <Rating value={individual?.rating} fractions={2} readOnly />
         <Space h='md'/>
         <Flex
         align='center'
@@ -66,11 +71,11 @@ export const IndividualProduct=()=>{
         <Text
         td='line-through'
         c='gray'
-        >1400</Text>
+        >{individual?.actualPrice}</Text>
         <IconCurrencyRupee/>
-        <Title order={3}>1250</Title>
+        <Title order={3}>{individual?.discountedPrice}</Title>
         
-        <Badge color="green" ml='10px'>25%</Badge>
+        <Badge color="green" ml='10px'>{individual?.discountPercentage}%</Badge>
         </Flex>
         <SimpleGrid cols={3} className="buybtn"
         justify='space-between'

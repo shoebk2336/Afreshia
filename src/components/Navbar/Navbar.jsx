@@ -34,6 +34,7 @@ import {
     IconShoppingCart,
 } from '@tabler/icons-react';
 import classes from './Navbar.module.css';
+import { useNavigate } from 'react-router';
 
 const mockdata = [
     {
@@ -69,6 +70,7 @@ const mockdata = [
 ];
 
 export function Navbar() {
+    const navigate=useNavigate()
     const CartReducer=useSelector(state=>state)
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
     const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
@@ -93,34 +95,43 @@ export function Navbar() {
     ));
 
     return (
-    <Box pb={120}>
+    <Box mb={30}>
         <header className={classes.header}>
         <Group justify="space-between" h="100%">
-            <Image 
-            className={classes.logo}
-            href="/"
-            fit='contain'
-            w={120}
-            src={"https://drive.google.com/uc?export=view&id=183zG6pjfRGDyAjtKC9wvb--7XQysyZE-"}/>
+        
+        <Image 
+        className={classes.logo}
+        
+            onClick={()=>navigate('/')}
+        
+        fit='contain'
+        w={120}
+        src={"https://drive.google.com/uc?export=view&id=183zG6pjfRGDyAjtKC9wvb--7XQysyZE-"}/>
+        
 
             <Group h="100%" gap={0} visibleFrom="sm">
-            <a href="/" className={classes.link}>
+            <Text 
+            onClick={()=>navigate('/')} className={classes.link}>
                 Home
-            </a>
+            </Text>
             
 
-            <a href="/mens" className={classes.link}>
+            <Text 
+            onClick={()=>navigate('/mens')}
+            className={classes.link}>
                 Mens
-            </a>
-            <a href="/womens" className={classes.link}>
+            </Text>
+            <Text 
+            onClick={()=>navigate('/womens')} className={classes.link}>
                 Women
-            </a>
+            </Text>
             </Group>
 
             <Group visibleFrom="sm">
             <Button variant="default">Log in</Button>
             <ActionIcon
             pos='relative'
+            onClick={()=>navigate('/cart')}
             ><IconShoppingCart />
             <Indicator
             
@@ -156,33 +167,44 @@ export function Navbar() {
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
             <Divider my="sm" />
 
-            <a href="/" className={classes.link}>
+            <Text 
+            onClick={()=>navigate('/')} className={classes.link}>
             Home
-            </a>
-            <UnstyledButton className={classes.link} onClick={toggleLinks}>
-            <Center inline>
-                <Box component="span" mr={5}>
-                Features
-                </Box>
-                <IconChevronDown
-                style={{ width: rem(16), height: rem(16) }}
-                color={theme.colors.blue[6]}
-                />
-            </Center>
-            </UnstyledButton>
-            <Collapse in={linksOpened}>{links}</Collapse>
-            <a href="home" className={classes.link}>
-            Learn
-            </a>
-            <a href="home" className={classes.link}>
-            Academy
-            </a>
+            </Text>
+            
+            <Text 
+            onClick={()=>navigate('/mens')} className={classes.link}>
+            Mens
+            </Text>
+            <Text 
+            onClick={()=>navigate('/womens')} className={classes.link}>
+            Womens
+            </Text>
 
             <Divider my="sm" />
 
             <Group justify="center" grow pb="xl" px="md">
             <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <ActionIcon
+            pos='relative'
+            onClick={()=>navigate('/cart')}
+            w='20px'
+            ><IconShoppingCart />
+            <Indicator
+            
+            radius='xl'
+            color='black'
+            withBorder
+            pos='absolute'
+            bottom={-5}
+            left={-1}
+            label={CartReducer.CartReducer.length}
+            styles={{
+                root:{radius:"10px"},
+                indicator:{width:"8px",height:"8px",padding:"8px"}
+            }}
+            />
+            </ActionIcon>
             </Group>
         </ScrollArea>
         </Drawer>

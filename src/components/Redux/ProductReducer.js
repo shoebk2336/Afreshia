@@ -4,7 +4,8 @@ const Initial={
     carousel1:[],
     womens:[],
     mens:[],
-    individual:[]
+    individual:[],
+    cart:[]
 }
 
 export const ProductReducer=(state=Initial,action)=>{
@@ -14,6 +15,7 @@ export const ProductReducer=(state=Initial,action)=>{
         case "women":return({...state,womens:payload})
         case "mens":return({...state,mens:payload})
         case "individual":return({...state,individual:payload})
+        case "cart":return({...state,cart:[...state.cart,payload]})
         default : return state;
     }
 }

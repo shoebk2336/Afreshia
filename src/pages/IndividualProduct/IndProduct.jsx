@@ -1,4 +1,5 @@
 import { Badge, Box, Button, Chip, Container, Divider, Flex, Grid,
+    Group,
     Image, NumberInput, Rating, SimpleGrid, Space, Text, TextInput, Title } from "@mantine/core"
 import { IconCoinRupee, IconCurrencyRupee } from "@tabler/icons-react"
 import { useEffect, useState } from "react"
@@ -20,8 +21,6 @@ export const IndividualProduct=()=>{
     const {individual}=ProductReducer
     console.log(ProductReducer,'productreducer')
     const {Cat,id}=useParams()
-    console.log(Cat,id,'cat')
-    // const id=1
     const [Qty,setQty]=useState(1)
 
     useEffect(()=>{
@@ -31,19 +30,23 @@ export const IndividualProduct=()=>{
     return<>
     <Navbar/>
     <Container size='lg'>
-    <SimpleGrid cols={2} className='Topbox'
+    <SimpleGrid cols={{base:1,sm:2}} className='Topbox'
     style={{
-        gap:"5%"
+        gap:"5%",
+        border:"0px solid red"
     }}
     
     >
     <Box className="LeftBox"
     
     >
-    <Box className="Image">
+    <Box className="Image"
+    >
     <Image 
     fit="contain"
-    w={300}
+    w={{sm:300,base:"100%"}}
+    m='auto'
+    
     src={individual?.imageLink}
     
     />
@@ -52,8 +55,10 @@ export const IndividualProduct=()=>{
         </Box>
 
         <Box className="RightBox"
-        w='80%'
-        style={{position:"relative"
+        w={{sm:'80%',base:"100%"}}
+        h={{base:"300px"}}
+        style={{position:"relative",
+        border:"0px solid red"
     }}
         
         >
@@ -77,30 +82,36 @@ export const IndividualProduct=()=>{
         
         <Badge color="green" ml='10px'>{individual?.discountPercentage}%</Badge>
         </Flex>
-        <SimpleGrid cols={3} className="buybtn"
-        justify='space-between'
-        w='100%'
-        style={{position:"absolute",bottom:"0",border:"0px solid red"}}
+        
+
+        <Group
+        style={{position:"absolute",bottom:0}}
+        
+        >
+        <Flex 
+        justify="space-between"
+        gap='20px'
         >
         <NumberInput
         w='50%'
-        
         value={Qty}
         onChange={setQty}
         />
         <Button
         fullWidth
-        onClick={()=>dispatch({type:"product",payload:{Qty,id}})}
+        onClick={()=>dispatch({type:"product",payload:{Qty,id,Cat}})}
         variant="default"
         >Add to cart</Button>
+        </Flex>
         <Button
         fullWidth
         onClick={()=>navigate('/cart')}
         >Buy Now</Button>
-        </SimpleGrid>
+        </Group>
         </Box>
         </SimpleGrid >
 
+        <Space h='xl'/>
         <Space h='xl'/>
         <Divider/>
         <Space h='xl'/>

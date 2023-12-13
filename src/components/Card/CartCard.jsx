@@ -3,15 +3,23 @@ import { IconCurrencyRupee, IconTrash } from "@tabler/icons-react"
 
 
 
-export const CartCard=()=>{
+export const CartCard=(props)=>{
+    const {product}=props
+    console.log(product,'produt')
+    const {actualPrice,discountedPrice,
+        discountPercentage,id,imageLink,
+        ProductName,description,rating}=product
+
 return(<>
     <Space h='md'/>
     <Container size='lg'>
     <Flex justify='space-between'>
     <Image 
+    fit="contain"
     style={{border:"0px solid red"}}
-    w='50%'
-    src="https://drive.google.com/uc?export=view&id=1CnFjJU78uNbg6XaNK_c4i-NU219aEFN9"/>
+    w='100%'
+    h='300px'
+    src={imageLink}/>
     
     <Divider orientation="vertical"/>
     <Box className="right"
@@ -19,7 +27,7 @@ return(<>
     style={{border:"0px solid red"}}
     >
     <Title order={5} ff='cursive'>AFRESHIA</Title>
-    <Title order={4}>Product Name</Title>
+    <Title order={4}>{ProductName}</Title>
     <Space h='md'/>
     <Flex
     justify='space-between'
@@ -27,6 +35,7 @@ return(<>
     >
     <NumberInput
     w='15%'
+    
     />
     <ActionIcon variant="default">
     <IconTrash />
@@ -41,14 +50,14 @@ return(<>
     <Text
     fw='600'
     size="15px"
-    >Price</Text>
+    >{actualPrice}</Text>
     <Space h='sm'/>
     <Text
     fw='600'
     size="15px"
     >
     
-    Discount</Text>
+    {discountPercentage}%</Text>
     
         </Box>
         <Box className="tagValue">
@@ -59,14 +68,14 @@ return(<>
     align='center'
     >
     <IconCurrencyRupee size='15px'/>
-    1400</Text>
+    {discountedPrice}</Text>
     <Space h='sm'/>
     <Text
     fw='600'
     size="15px"
     ta='right'
     >
-    25%</Text>
+    {discountPercentage}%</Text>
         </Box>
     </Flex>
     <Space h='sm'/>
